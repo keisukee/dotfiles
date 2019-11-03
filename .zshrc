@@ -103,7 +103,8 @@ zstyle ':chpwd:*' recent-dirs-pushd true
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 # 自作シェルスクリプトのalias
-alias sc='sh shell_scripts/search_code.sh'
+alias sc='sh ~/shell-scripts/search_code.sh'
+alias gcre='sh ~/shell-scripts/gcre.sh'
 
 # peco settings
 # 過去に実行したコマンドを選択。ctrl-rにバインド
@@ -137,6 +138,8 @@ bindkey '^u' peco-cdr
 
 # pecoでローカルブランチを簡単切り替え
 alias -g lb='`git branch | peco --prompt "GIT BRANCH>" | head -n 1 | sed -e "s/^\*\s*//g"`'
+# dockerコンテナに入る
+alias de='docker exec -it $(docker ps | peco | cut -d " " -f 1) /bin/bash'
 
 # 失敗したコマンドはzsh_historyに残さない
 __record_command() {
@@ -189,9 +192,6 @@ alias doc='cd ~/Documents'
 alias dl='cd ~/Downloads'
 alias box='cd ~/Dropbox'
 alias waseda='cd ~/Dropbox/早稲田'
-
-# shorten scripts
-alias gcre='sh ~/shell_scripts/gcre.sh'
 
 # Open app with alias
 alias line='open /Applications/LINE.app/'
