@@ -48,7 +48,8 @@ formulas=(
     phantomjs
     mecab
     diff-so-fancy
-    thefuck
+    zsh
+    zsh-completions
 )
 
 "brew tap..."
