@@ -166,6 +166,8 @@ __update_history() {
 }
 precmd_functions+=(__update_history)
 
+# git branch切り替えのエイリアス
+alias gcolb='git checkout lb'
 # zsh settings
 # ヒストリに追加されるコマンド行が古いものと同じなら古いものを削除
 setopt hist_ignore_all_dups
@@ -200,6 +202,9 @@ alias excel="open /Applications/excel.app/"
 alias slack='open /Applications/Slack.app/'
 alias .="open ."
 
+# vscode
+alias code='code ./'
+
 #URL Open
 alias mwd='open https://my.waseda.jp/'
 
@@ -211,18 +216,34 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 export PATH=$PATH:/usr/local/texlive/2018/bin/x86_64-darwin/
 
+# dotfiles
 export PATH=$PATH:/Users/keisuke/dotfiles
-export PATH=$PATH:/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk
-export CPATH=/Library/Developer/CommandLineTools/usr/include/c++/v1
 
 # python settings
 export LDFLAGS="-L/usr/local/opt/readline/lib"
 export CPPFLAGS="-I/usr/local/opt/readline/include"
 export PKG_CONFIG_PATH="/usr/local/opt/readline/lib/pkgconfig"
 export PYTHONPATH=\$PYTHONPATH:~/.pyenv/versions/3.6.5/lib/python3.6/site-packages/
+
+# go settings
 export PATH="$HOME/.goenv/bin:$PATH"
 eval "$(goenv init -)"
+export GOPATH=/Users/keisuke/go  # GOPATHにすると決めた場所
+export PATH=$GOPATH/bin:$PATH
+
+# other settings
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 eval "$(ssh-agent)"
 eval "ssh-add ~/.ssh/id_rsa"
 eval "ssh-add ~/.ssh/follop-app-server-rsa"
+
+# pyenv settings related to brew
+alias brew="env PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin brew doctor"
+
+# settings of node.js
+eval "$(nodenv init -)"
+export PATH="$HOME/.nodenv/bin:$PATH"
+export PATH="$HOME/node_modules:$PATH"
+
+# settings of terraform
+export PATH="$HOME/.tfenv/bin:$PATH" 
