@@ -238,7 +238,7 @@ eval "ssh-add ~/.ssh/id_rsa"
 eval "ssh-add ~/.ssh/follop-app-server-rsa"
 
 # pyenv settings related to brew
-alias brew="env PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin brew doctor"
+alias brew="env PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin brew"
 
 # settings of node.js
 eval "$(nodenv init -)"
