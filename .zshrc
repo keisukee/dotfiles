@@ -210,7 +210,14 @@ alias mwd='open https://my.waseda.jp/'
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
-export JAVA_HOME="/usr/libexec/java_home -v 1.8"
+
+# Java
+# export JAVA_HOME="/usr/bin/java"
+export JAVA_HOME="/usr/libexec/java_home -v 12"
+export PATH=$JAVA_HOME/bin:$PATH
+
+
+# Python
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
