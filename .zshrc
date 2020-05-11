@@ -230,7 +230,7 @@ export PATH=$PATH:/Users/keisuke/dotfiles
 export LDFLAGS="-L/usr/local/opt/readline/lib"
 export CPPFLAGS="-I/usr/local/opt/readline/include"
 export PKG_CONFIG_PATH="/usr/local/opt/readline/lib/pkgconfig"
-export PYTHONPATH=\$PYTHONPATH:~/.pyenv/versions/3.6.5/lib/python3.6/site-packages/
+# export PYTHONPATH=\$PYTHONPATH:~/.pyenv/versions/3.6.5/lib/python3.6/site-packages/
 
 # go settings
 export PATH="$HOME/.goenv/bin:$PATH"
@@ -254,3 +254,10 @@ export PATH="$HOME/node_modules:$PATH"
 
 # settings of terraform
 export PATH="$HOME/.tfenv/bin:$PATH" 
+
+# android SDK
+export ANDROID_SDK=/Users/keisuke/Library/Android/sdk
+export PATH=/Users/keisuke/Library/Android/sdk/platform-tools:$PATH
+
+# react-native settings Special case of Expo (CRNA). src: https://github.com/jhen0409/react-native-debugger/blob/master/docs/getting-started.md#launch-by-cli-or-react-native-packager-macos-only
+export REACT_DEBUGGER="unset ELECTRON_RUN_AS_NODE && open -g 'rndebugger://set-debugger-loc?port=19001' ||"
