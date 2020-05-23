@@ -141,6 +141,27 @@ alias -g lb='`git branch | peco --prompt "GIT BRANCH>" | head -n 1 | sed -e "s/^
 # dockerコンテナに入る
 alias de='docker exec -it $(docker ps | peco | cut -d " " -f 1) /bin/bash'
 
+# ssh by peco
+function peco-ssh () {
+  local selected_host=$(awk '
+  tolower($1)=="host" {
+    for (i=2; i<=NF; i++) {
+      if ($i !~ "[*?]") {
+        print $i
+      }
+    }
+  }
+  ' ~/.ssh/config | sort | peco --query "$LBUFFER")
+  if [ -n "$selected_host" ]; then
+    BUFFER="ssh ${selected_host}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N peco-ssh
+alias pssh='peco-ssh'
+# bindkey '^\' peco-ssh
+
 # 失敗したコマンドはzsh_historyに残さない
 __record_command() {
   typeset -g _LASTCMD=${1%%$'\n'}
@@ -214,6 +235,7 @@ eval "$(rbenv init -)"
 # Java
 # export JAVA_HOME="/usr/bin/java"
 export JAVA_HOME="/usr/libexec/java_home -v 12"
+# export JAVA_HOME="/usr/libexec/java_home"
 export PATH=$JAVA_HOME/bin:$PATH
 
 
@@ -261,3 +283,5 @@ export PATH=/Users/keisuke/Library/Android/sdk/platform-tools:$PATH
 
 # react-native settings Special case of Expo (CRNA). src: https://github.com/jhen0409/react-native-debugger/blob/master/docs/getting-started.md#launch-by-cli-or-react-native-packager-macos-only
 export REACT_DEBUGGER="unset ELECTRON_RUN_AS_NODE && open -g 'rndebugger://set-debugger-loc?port=19001' ||"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
