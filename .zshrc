@@ -88,6 +88,7 @@ source $ZSH/oh-my-zsh.sh
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
+eval "$(starship init zsh)"
 
 # cdr, add-zsh-hook を有効にする
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
@@ -266,7 +267,6 @@ export PATH=$GOPATH/bin:$PATH
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 eval "$(ssh-agent)"
 eval "ssh-add ~/.ssh/id_rsa"
-eval "ssh-add ~/.ssh/follop-app-server-rsa"
 
 # pyenv settings related to brew
 alias brew="env PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin brew"
