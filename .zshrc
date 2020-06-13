@@ -213,18 +213,12 @@ alias gplod='git pull origin develop'
 alias ggpush='git push origin $(git_current_branch)'
 alias hisl='history -l'
 alias his='history'
+
 # Change Directory
 alias doc='cd ~/Documents'
 alias dl='cd ~/Downloads'
 alias box='cd ~/Dropbox'
 alias waseda='cd ~/Dropbox/早稲田'
-
-# Open app with alias
-alias line='open /Applications/LINE.app/'
-alias word="open /Applications/word.app/"
-alias excel="open /Applications/excel.app/"
-alias slack='open /Applications/Slack.app/'
-alias .="open ."
 
 # vscode
 alias code='code ./'
@@ -241,21 +235,18 @@ export JAVA_HOME="/usr/libexec/java_home -v 12"
 # export JAVA_HOME="/usr/libexec/java_home"
 export PATH=$JAVA_HOME/bin:$PATH
 
+# dotfiles
+export PATH=$PATH:/Users/keisuke/dotfiles
 
 # Python
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 export PATH=$PATH:/usr/local/texlive/2018/bin/x86_64-darwin/
-
-# dotfiles
-export PATH=$PATH:/Users/keisuke/dotfiles
-
-# python settings
 export LDFLAGS="-L/usr/local/opt/readline/lib"
 export CPPFLAGS="-I/usr/local/opt/readline/include"
 export PKG_CONFIG_PATH="/usr/local/opt/readline/lib/pkgconfig"
-# export PYTHONPATH=\$PYTHONPATH:~/.pyenv/versions/3.6.5/lib/python3.6/site-packages/
+export PYTHONPATH=\$PYTHONPATH:~/.pyenv/versions/3.6.5/lib/python3.6/site-packages/
 
 # go settings
 export PATH="$HOME/.goenv/bin:$PATH"
