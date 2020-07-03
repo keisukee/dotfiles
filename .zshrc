@@ -165,6 +165,9 @@ zle -N peco-ssh
 alias pssh='peco-ssh'
 # bindkey '^\' peco-ssh
 
+# fzf preview command alias
+alias fpreview="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
+
 # 失敗したコマンドはzsh_historyに残さない
 __record_command() {
   typeset -g _LASTCMD=${1%%$'\n'}
@@ -220,6 +223,9 @@ alias dl='cd ~/Downloads'
 alias box='cd ~/Dropbox'
 alias waseda='cd ~/Dropbox/早稲田'
 
+# finder
+alias .='open .'
+
 # vscode
 alias code='code ./'
 
@@ -246,7 +252,7 @@ export PATH=$PATH:/usr/local/texlive/2018/bin/x86_64-darwin/
 export LDFLAGS="-L/usr/local/opt/readline/lib"
 export CPPFLAGS="-I/usr/local/opt/readline/include"
 export PKG_CONFIG_PATH="/usr/local/opt/readline/lib/pkgconfig"
-export PYTHONPATH=\$PYTHONPATH:~/.pyenv/versions/3.6.5/lib/python3.6/site-packages/
+# export PYTHONPATH=\$PYTHONPATH:~/.pyenv/versions/3.6.5/lib/python3.6/site-packages/
 
 # go settings
 export PATH="$HOME/.goenv/bin:$PATH"
