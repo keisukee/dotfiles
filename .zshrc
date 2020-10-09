@@ -286,3 +286,8 @@ export REACT_DEBUGGER="unset ELECTRON_RUN_AS_NODE && open -g 'rndebugger://set-d
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 export PATH="$PATH:/usr/local/Cellar/binutils/2.34/bin/gobjdump"
+
+
+# for computer architecture B
+export PATH=/opt/carch/bin:$PATH
+export PATH=/Users/keisuke/GoogleDrive/早稲田/コンピュータアーキテクチャB/work/carch/bin:$PATH
