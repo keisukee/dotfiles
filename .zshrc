@@ -173,7 +173,8 @@ __record_command() {
   typeset -g _LASTCMD=${1%%$'\n'}
   return 1
 }
-zshaddhistory_functions+=(__record_command)
+# comment out temporarily
+# zshaddhistory_functions+=(__record_command)
 
 __update_history() {
   local last_status="$?"
@@ -191,7 +192,8 @@ __update_history() {
     print -sr -- "${cmd_reduce_blanks}"
   fi
 }
-precmd_functions+=(__update_history)
+# comment out temporarily
+# precmd_functions+=(__update_history)
 
 # git branch切り替えのエイリアス
 alias gcolb='git checkout lb'
@@ -199,7 +201,7 @@ alias gcolb='git checkout lb'
 # ヒストリに追加されるコマンド行が古いものと同じなら古いものを削除
 setopt hist_ignore_all_dups
 # 重複を記録しない
-setopt hist_ignore_dups
+# setopt hist_ignore_dups
 # コメント機能を有効にする
 setopt interactivecomments
 
