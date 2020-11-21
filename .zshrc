@@ -195,15 +195,26 @@ __update_history() {
 # comment out temporarily
 # precmd_functions+=(__update_history)
 
-# git branch切り替えのエイリアス
+# git settings
+## git branch切り替えのエイリアス
 alias gcolb='git checkout lb'
+
+## add & commit in one command
+gagc() {
+  git add ./ | git commit -m $*
+}
+
 # zsh settings
-# ヒストリに追加されるコマンド行が古いものと同じなら古いものを削除
-setopt hist_ignore_all_dups
-# 重複を記録しない
-# setopt hist_ignore_dups
-# コメント機能を有効にする
-setopt interactivecomments
+HISTSIZE=10000               # ヒストリに保存するコマンド数
+SAVEHIST=10000               # ヒストリファイルに保存するコマンド数
+setopt hist_ignore_all_dups  # 重複するコマンド行は古い方を削除
+# setopt hist_ignore_dups      # 直前と同じコマンドラインはヒストリに追加しない
+setopt share_history         # コマンド履歴ファイルを共有する
+setopt append_history        # 履歴を追加 (毎回 .zsh_history を作るのではなく)
+setopt inc_append_history    # 履歴をインクリメンタルに追加
+setopt hist_no_store         # historyコマンドは履歴に登録しない
+setopt hist_reduce_blanks    # 余分な空白は詰めて記録
+
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
