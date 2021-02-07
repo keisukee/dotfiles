@@ -275,8 +275,8 @@ export PATH=$GOPATH/bin:$PATH
 
 # other settings
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
-eval "$(ssh-agent)"
-eval "ssh-add ~/.ssh/id_rsa"
+# eval "$(ssh-agent)"
+# eval "ssh-add ~/.ssh/id_rsa"
 
 # pyenv settings related to brew
 alias brew="env PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin brew"
