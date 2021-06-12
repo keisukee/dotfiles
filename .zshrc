@@ -304,3 +304,8 @@ export PATH="$PATH:/usr/local/Cellar/binutils/2.34/bin/gobjdump"
 # for computer architecture B
 export PATH=/opt/carch/bin:$PATH
 export PATH=/Users/keisuke/GoogleDrive/早稲田/コンピュータアーキテクチャB/work/carch/bin:$PATH
+[ -f "/Users/keisuke/.ghcup/env" ] && source "/Users/keisuke/.ghcup/env" # ghcup-env
+
+
+# Haskell
+export PATH="/usr/local/bin/stack:$PATH"
