@@ -86,8 +86,7 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+# init starship
 eval "$(starship init zsh)"
 
 # cdr, add-zsh-hook を有効にする
@@ -275,8 +274,6 @@ export PATH=$GOPATH/bin:$PATH
 
 # other settings
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
-# eval "$(ssh-agent)"
-# eval "ssh-add ~/.ssh/id_rsa"
 
 # pyenv settings related to brew
 alias brew="env PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin brew"
@@ -309,3 +306,19 @@ export PATH=/Users/keisuke/GoogleDrive/早稲田/コンピュータアーキ�
 
 # Haskell
 export PATH="/usr/local/bin/stack:$PATH"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/keisuke/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/keisuke/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/keisuke/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/keisuke/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
