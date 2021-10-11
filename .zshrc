@@ -1,3 +1,8 @@
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the start of this file.
+[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
+#### END FIG ENV VARIABLES ####
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -204,8 +209,8 @@ gagc() {
 }
 
 # zsh settings
-HISTSIZE=10000               # ヒストリに保存するコマンド数
-SAVEHIST=10000               # ヒストリファイルに保存するコマンド数
+HISTSIZE=5000               # ヒストリに保存するコマンド数
+SAVEHIST=5000               # ヒストリファイルに保存するコマンド数
 setopt hist_ignore_all_dups  # 重複するコマンド行は古い方を削除
 # setopt hist_ignore_dups      # 直前と同じコマンドラインはヒストリに追加しない
 setopt share_history         # コマンド履歴ファイルを共有する
@@ -297,15 +302,9 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 export PATH="$PATH:/usr/local/Cellar/binutils/2.34/bin/gobjdump"
 
-
-# for computer architecture B
-export PATH=/opt/carch/bin:$PATH
-export PATH=/Users/keisuke/GoogleDrive/早稲田/コンピュータアーキテクチャB/work/carch/bin:$PATH
-[ -f "/Users/keisuke/.ghcup/env" ] && source "/Users/keisuke/.ghcup/env" # ghcup-env
-
-
 # Haskell
 export PATH="/usr/local/bin/stack:$PATH"
+[ -f "/Users/keisuke/.ghcup/env" ] && source "/Users/keisuke/.ghcup/env" # ghcup-env
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -321,4 +320,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
