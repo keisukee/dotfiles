@@ -1,4 +1,4 @@
-
+# d
 #### FIG ENV VARIABLES ####
 # Please make sure this block is at the start of this file.
 [ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
@@ -224,7 +224,7 @@ setopt hist_reduce_blanks    # 余分な空白は詰めて記録
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias d='docker'
-alias dc='docker-compose'
+alias dc='docker compose'
 alias b='bundle'
 alias e='exec'
 alias noti='terminal-notifier -message "コマンド完了"'
@@ -233,12 +233,8 @@ alias gplod='git pull origin develop'
 alias ggpush='git push origin $(git_current_branch)'
 alias hisl='history -l'
 alias his='history'
-
-# Change Directory
-alias doc='cd ~/Documents'
-alias dl='cd ~/Downloads'
-alias box='cd ~/Dropbox'
-alias waseda='cd ~/Dropbox/早稲田'
+alias gcm='git commit'
+alias gbrcp='git branch --contains | cut -d " " -f 2 | pbcopy'
 
 # finder
 alias .='open .'
@@ -246,17 +242,14 @@ alias .='open .'
 # vscode
 alias code='code ./'
 
-#URL Open
-alias mwd='open https://my.waseda.jp/'
-
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 # Java
 # export JAVA_HOME="/usr/bin/java"
-export JAVA_HOME="/usr/libexec/java_home -v 12"
+# export JAVA_HOME="/usr/libexec/java_home -v 12"
 # export JAVA_HOME="/usr/libexec/java_home"
-export PATH=$JAVA_HOME/bin:$PATH
+# export PATH=$JAVA_HOME/bin:$PATH
 
 # dotfiles
 export PATH=$PATH:/Users/keisuke/dotfiles
@@ -264,7 +257,7 @@ export PATH=$PATH:/Users/keisuke/dotfiles
 # Python
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+eval "$(pyenv init --path)"
 export PATH=$PATH:/usr/local/texlive/2018/bin/x86_64-darwin/
 export LDFLAGS="-L/usr/local/opt/readline/lib"
 export CPPFLAGS="-I/usr/local/opt/readline/include"
@@ -284,8 +277,9 @@ export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 alias brew="env PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin brew"
 
 # settings of node.js
-eval "$(nodenv init -)"
-export PATH="$HOME/.nodenv/bin:$PATH"
+# eval "$(nodenv init -)"
+# export PATH="$HOME/.nodenv/bin:$PATH"
+export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH="$HOME/node_modules:$PATH"
 
 # settings of terraform
@@ -306,16 +300,31 @@ export PATH="$PATH:/usr/local/Cellar/binutils/2.34/bin/gobjdump"
 export PATH="/usr/local/bin/stack:$PATH"
 [ -f "/Users/keisuke/.ghcup/env" ] && source "/Users/keisuke/.ghcup/env" # ghcup-env
 
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+export PATH="/Users/keisuke/.local/bin:$PATH"
+
+export PATH="$HOME/.phpenv/bin:$PATH"
+eval "$(phpenv init -)"
+
+export PATH="/usr/local/opt/bzip2/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/bzip2/lib"
+export CPPFLAGS="-I/usr/local/opt/bzip2/include"
+export PATH=/usr/local/opt/bison/bin:$PATH
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/keisuke/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/usr/local/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/keisuke/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/keisuke/opt/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
+        . "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/keisuke/opt/anaconda3/bin:$PATH"
+        export PATH="/usr/local/Caskroom/miniconda/base/bin:$PATH"
     fi
 fi
 unset __conda_setup
