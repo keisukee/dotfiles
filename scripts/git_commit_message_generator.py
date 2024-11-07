@@ -10,8 +10,8 @@ def get_staged_diff():
     try:
         # git diffコマンドを実行してステージング済みの変更を取得
         result = subprocess.run(['git', 'diff', '--cached'],
-                              capture_output=True, 
-                              text=True, 
+                              capture_output=True,
+                              text=True,
                               check=True)
         return result.stdout
     except subprocess.CalledProcessError as e:

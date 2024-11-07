@@ -242,6 +242,10 @@ alias .='open .'
 # vscode
 alias code='code ./'
 
+# my custom scripts
+# settings of git commit message generator
+alias gcmg='sh ~/dotfiles/scripts/git_commit_message_generator.sh'
+
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
