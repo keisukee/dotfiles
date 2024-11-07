@@ -25,10 +25,10 @@ def generate_commit_message(diff_content, language):
 
         # プロンプトの作成
         if language == 'ja':
-            prompt = f"以下のGit差分に基づいて、簡潔なコミットメッセージを生成してください。敬体ではなく常体で。コミットメッセージは以下の形式に従ってください：1行目: 変更の要約（50文字以内）、2行目: 空行、3行目以降: 詳細な説明（必要な場合）。Git差分: {diff_content}"
+            prompt = f"以下のGit差分に基づいて、簡潔なコミットメッセージを生成してください。敬体ではなく常体で。コミットメッセージは以下の形式に従ってください：1行目: 変更の要約（50文字以内）、2行目: 空行、3行目以降: 詳細な説明（必要な場合）。変更点は'-'でポイントわけしてください。Git差分: {diff_content}"
             system_message = "あなたは優れたプログラマーで、Git差分を分析して適切なコミットメッセージを生成する専門家です。"
         else:
-            prompt = f"Based on the following Git diff, generate a concise commit message. The commit message should follow this format: Line 1: Summary of changes (within 50 characters), Line 2: Blank line, Line 3 and beyond: Detailed description (if necessary). Git diff: {diff_content}"
+            prompt = f"Based on the following Git diff, generate a concise commit message. The commit message should follow this format: Line 1: Summary of changes (within 50 characters), Line 2: Blank line, Line 3 and beyond: Detailed description (if necessary). Use '-' to bullet point the changes. Git diff: {diff_content}"
             system_message = "You are an excellent programmer and an expert in analyzing Git diffs to generate appropriate commit messages."
 
         # ChatGPT APIを呼び出し
