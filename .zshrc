@@ -333,3 +333,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# for tfenv settings (https://github.com/tfutils/tfenv?tab=readme-ov-file#environment-variables)
+TFENV_ARCH=arm64
