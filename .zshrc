@@ -1,8 +1,4 @@
-# d
-#### FIG ENV VARIABLES ####
-# Please make sure this block is at the start of this file.
-[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
-#### END FIG ENV VARIABLES ####
+zmodload zsh/zprof
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -336,3 +332,5 @@ unset __conda_setup
 
 # for tfenv settings (https://github.com/tfutils/tfenv?tab=readme-ov-file#environment-variables)
 TFENV_ARCH=arm64
+
+# zprof # コメントを外すと起動時間の詳細が表示される
