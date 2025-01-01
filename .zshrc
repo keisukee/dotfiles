@@ -256,13 +256,12 @@ export PATH=$PATH:/Users/keisuke/dotfiles
 
 # Python
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-export PATH=$PATH:/usr/local/texlive/2018/bin/x86_64-darwin/
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+
 export LDFLAGS="-L/usr/local/opt/readline/lib"
 export CPPFLAGS="-I/usr/local/opt/readline/include"
 export PKG_CONFIG_PATH="/usr/local/opt/readline/lib/pkgconfig"
-# export PYTHONPATH=\$PYTHONPATH:~/.pyenv/versions/3.6.5/lib/python3.6/site-packages/
 
 # go settings
 export PATH="$HOME/.goenv/bin:$PATH"
@@ -272,9 +271,6 @@ export PATH=$GOPATH/bin:$PATH
 
 # other settings
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
-
-# pyenv settings related to brew
-alias brew="env PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin brew"
 
 # settings of node.js
 # eval "$(nodenv init -)"
