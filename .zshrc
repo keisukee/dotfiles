@@ -331,3 +331,9 @@ export PATH=/usr/local/opt/bison/bin:$PATH
 TFENV_ARCH=arm64
 
 # zprof # uncomment to see the detailed startup time
+
+# Android Settings (https://docs.expo.dev/workflow/android-studio-emulator/)
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
