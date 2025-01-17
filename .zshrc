@@ -242,8 +242,10 @@ alias code='code ./'
 # settings of git commit message generator
 alias gcmg='sh ~/dotfiles/scripts/git_commit_message_generator.sh'
 
+# Ruby settings
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+export LDFLAGS="-L$HOMEBREW_PREFIX/lib"
 
 # Java
 # export JAVA_HOME="/usr/bin/java"
@@ -258,10 +260,6 @@ export PATH=$PATH:/Users/keisuke/dotfiles
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
-
-export LDFLAGS="-L/usr/local/opt/readline/lib"
-export CPPFLAGS="-I/usr/local/opt/readline/include"
-export PKG_CONFIG_PATH="/usr/local/opt/readline/lib/pkgconfig"
 
 # go settings
 export PATH="$HOME/.goenv/bin:$PATH"
@@ -305,11 +303,6 @@ export PATH="/Users/keisuke/.local/bin:$PATH"
 
 export PATH="$HOME/.phpenv/bin:$PATH"
 eval "$(phpenv init -)"
-
-export PATH="/usr/local/opt/bzip2/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/bzip2/lib"
-export CPPFLAGS="-I/usr/local/opt/bzip2/include"
-export PATH=/usr/local/opt/bison/bin:$PATH
 
 # TODO: remove later
 # # >>> conda initialize >>>
