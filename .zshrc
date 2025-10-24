@@ -301,9 +301,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 export PATH="/Users/keisuke/.local/bin:$PATH"
 
-export PATH="$HOME/.phpenv/bin:$PATH"
-eval "$(phpenv init -)"
-
 # TODO: remove later
 # # >>> conda initialize >>>
 # # !! Contents within this block are managed by 'conda init' !!
