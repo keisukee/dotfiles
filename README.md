@@ -11,6 +11,13 @@
     - `python git_commit_message_generator.py ja`
     - `python git_commit_message_generator.py en`
 
+## Karabiner-Elements
+設定を反映するには、`.config/karabiner` を `~/.config/karabiner` にコピーする。
+
+```bash
+cp -r .config/karabiner ~/.config/karabiner
+```
+
 ## Tips
 
 ### macOS: Google IME の入力ソース切り替えインジケーターを非表示にする
